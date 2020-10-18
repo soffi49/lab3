@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "Toyota Aygo",
+        "price" : 60000
+    },
+    {
+        "name" : "Toyota Corolla",
+        "price": 100000
+    },
+    {
+        "name" : "Volkswagen Polo",
+        "price" : 80000
+    }
+]
