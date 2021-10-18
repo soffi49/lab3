@@ -6,6 +6,7 @@ export interface Car {
     "seats": number;
     "doors": number;
     "image": string;
+    "AC": boolean;
 }
 
 export const CARS: Car[] = carsFromJSON;
