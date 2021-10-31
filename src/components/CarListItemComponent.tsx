@@ -8,33 +8,15 @@ interface CarProps {
     changePrice: (e: React.MouseEvent<HTMLButtonElement>, carName: string, newPrice: number) => void
 }
 
-const CarPriceEdit: React.FC<CarProps> = ({carData, deleteCar, changePrice: changePrice}) => {
-
-    const getPriceInputValue = () => {
-        return Number((document.getElementById('priceInput') as HTMLInputElement).value);
-    }
-
-    return(
-        <div className="carPriceBox">
-                <h6>Price per day</h6>
-                <input id="priceInput" type="number" value={carData.pricePerDay}/>
-                <div className="carButtonBox">
-                    <button onClick={(e)=>changePrice(e,carData.name,getPriceInputValue())}>Save Edit</button>
-                    <button onClick={(e)=>deleteCar(e,carData.name)}>Delete</button>
-                </div>
-        </div>
-    )
-}
-
-export const CarListItemComponent: React.FC<CarProps> = ({carData, deleteCar, changePrice: changePrice}) => {
+export const CarListItemComponent: React.FC<CarProps> = ({carData, deleteCar, changePrice}) => {
     const [editState, setEditState] = useState(false);
-
-    const getPriceInputValue = () => {
-        return Number((document.getElementById('priceInput') as HTMLInputElement).value);
-    }
 
     const editCar = () => {
         setEditState(true);
+    }
+
+    const getPriceInputValue = () => {
+        return Number((document.getElementById('priceInput') as HTMLInputElement).value);
     }
 
     const submitEdit = (e: React.MouseEvent<HTMLButtonElement>, carName: string, newPrice: number) => {
@@ -54,14 +36,15 @@ export const CarListItemComponent: React.FC<CarProps> = ({carData, deleteCar, ch
                 </div>
             </div>
             <div className="carPriceBox">
-                <h6>Price per day</h6>
-                {(editState)? <input id="priceInput" type="number" defaultValue={carData.pricePerDay}/> : <h4>{carData.pricePerDay}</h4>}
+                <h5>Price per day</h5>
+                {(editState)? <input id="priceInput" type="number" defaultValue={carData.pricePerDay} required/>
+                     : <h2>{carData.pricePerDay} PLN</h2>}
                 <div className="carButtonBox">
-                    {(editState)? <button onClick={(e)=>submitEdit(e,carData.name,getPriceInputValue())}>Save Edit</button>
-                                    : <button onClick={editCar}>Edit</button>}
-                    <button onClick={(e)=>deleteCar(e,carData.name)}>Delete</button>
+                    {(editState)? <button className="priceSaveButton" onClick={(e)=>submitEdit(e,carData.name,getPriceInputValue())}>Save Edit</button>
+                                    : <button className="priceSaveButton" onClick={editCar}>Edit</button>}
+                    <button className="priceSaveButton" onClick={(e)=>deleteCar(e,carData.name)}>Delete</button>
                 </div>
-        </div>
+            </div>
         </div>
     )
 }

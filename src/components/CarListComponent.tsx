@@ -1,9 +1,10 @@
 import { CarListItemComponent } from "./CarListItemComponent";
 import { Car, CARS } from "../data/Car";
 import React, { useEffect, useState } from "react";
+import "../css/CarItemCss.css";
 
 export const CarListComponent = () => {
-    const [carListData, setCarListInitial] = useState(CARS);
+    const [carListData, setCarListData] = useState(CARS);
     const [searchVal, setSearchVal] = useState("");
 
     const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,21 +20,15 @@ export const CarListComponent = () => {
 
     const editCar = (e: React.MouseEvent<HTMLButtonElement>, carName: string, newPrice: number) => {
         let carToEdit = carListData.find(car => car.name===carName) as Car;
+
         if(carToEdit) {
             carToEdit.pricePerDay = newPrice;
-            const index= carListData.indexOf(carToEdit);
-            setCarListInitial(currCars => [...currCars.splice(1,index),carToEdit,...currCars.splice(index+1)]);
+            setCarListData(carListData.map(car => (car.name!==carName)? car : carToEdit));
         }
     }
 
     const deleteCar = (e: React.MouseEvent<HTMLButtonElement>, carName: string) => {
-        const carToDelete = carListData.findIndex(car => car.name===carName);
-        const carList = [...carListData];
-
-        if(carToDelete!==-1) {
-            carList.splice(carToDelete,1);
-            setCarListInitial(carList);
-        }
+        setCarListData(carListData.filter(car => car.name!==carName));
     }
 
     return(

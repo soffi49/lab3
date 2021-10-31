@@ -1,11 +1,16 @@
+.main {
+    background-color: #93adc4;
+}
+
 .carListItemComponent {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    margin: 30px 20px;
-    border: 2px solid #000000;
-    padding: 20px;
+    margin: 20px 20px;
+    padding: 15px;
+    box-shadow: 2px 5px 14px -6px rgba(0,0,0,0.92);
+    background-color: #f4f4f5ed;
 }
 
 .carInformation {
@@ -15,17 +20,24 @@
 }
 
 .carDetails {
-    margin-left: 50px;
+    margin-left: 25px;
+    font-size: 1.2rem;
+    font-family: Helvetics;
 }
 
 .carName {
     display: block;
     margin-left: 30px;
-    width: 200px;
+    width: 180px;
+    font-size: 1.4rem;
+    font-family: Helvetica;
+    color: #121111d4;
 }
 
 .carImage {
-    max-width: 250px;
+    width: 200px;
+    box-shadow: -2px -1px 14px -4px rgba(0,0,0,0.9);
+    background-color: white;
 }
 
 .carImage img {
@@ -33,7 +45,48 @@
 }
 
 .carPriceBox {
-    width: 100px;
+    width: 150px;
+    height: inherit;
     display: flex;
     flex-direction: column;
+}
+
+.carPriceBox h5 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-family: Helvetica;
+}
+
+.carPriceBox h2,input {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-family: Helvetica;
+}
+
+.carPriceBox input {
+    height: 40px;
+    text-align: right;
+    font-family: Helvetica;
+}
+
+.carButtonBox {
+    display: flex;
+}
+
+.priceSaveButton {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #21292e;
+    font-weight: 600;
+    font-family: Helvetica;
+    border: solid 2px #2a4555;
+    margin-left: 5px;
+    height: 50px;
+    width: 70px;
+}
+
+.priceSaveButton:hover {
+    background: #2a4555;
+    color: white;
 }
