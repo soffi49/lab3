@@ -1,5 +1,22 @@
-.main {
+body {
     background-color: #93adc4;
+    height: 100%;
+}
+
+.searchForm {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.searchForm input {
+    margin-bottom: 10px;
+    width: 300px;
+    height: 25px;
+}
+
+.searchForm button {
+    width: 80px;
+    height: 30px;
 }
 
 .carListItemComponent {
@@ -64,7 +81,7 @@
 }
 
 .carPriceBox input {
-    height: 40px;
+    height: 30px;
     text-align: right;
     font-family: Helvetica;
 }
@@ -73,7 +90,7 @@
     display: flex;
 }
 
-.priceSaveButton {
+.buttonStyle {
     display: inline-block;
     padding: 0.3em 1em;
     text-decoration: none;
@@ -86,7 +103,7 @@
     width: 70px;
 }
 
-.priceSaveButton:hover {
+.buttonStyle:hover {
     background: #2a4555;
     color: white;
 }

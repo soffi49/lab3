@@ -36,7 +36,7 @@ export const CarListComponent = () => {
             <div className="searchBox">
                 <form className="searchForm" onSubmit={(e) => handleSearch(e)}>
                     <input type="text" id="searchFormInput" placeholder="Provide search criteria"/>
-                    <button type="submit">Submit</button>
+                    <button className="buttonStyle" type="submit">Submit</button>
                 </form>
             </div>
             <div>

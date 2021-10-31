@@ -40,9 +40,9 @@ export const CarListItemComponent: React.FC<CarProps> = ({carData, deleteCar, ch
                 {(editState)? <input id="priceInput" type="number" defaultValue={carData.pricePerDay} required/>
                      : <h2>{carData.pricePerDay} PLN</h2>}
                 <div className="carButtonBox">
-                    {(editState)? <button className="priceSaveButton" onClick={(e)=>submitEdit(e,carData.name,getPriceInputValue())}>Save Edit</button>
-                                    : <button className="priceSaveButton" onClick={editCar}>Edit</button>}
-                    <button className="priceSaveButton" onClick={(e)=>deleteCar(e,carData.name)}>Delete</button>
+                    {(editState)? <button className="buttonStyle" onClick={(e)=>submitEdit(e,carData.name,getPriceInputValue())}>Save Edit</button>
+                                    : <button className="buttonStyle" onClick={editCar}>Edit</button>}
+                    <button className="buttonStyle" onClick={(e)=>deleteCar(e,carData.name)}>Delete</button>
                 </div>
             </div>
         </div>
