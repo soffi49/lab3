@@ -1,0 +1,39 @@
+.carListItemComponent {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 30px 20px;
+    border: 2px solid #000000;
+    padding: 20px;
+}
+
+.carInformation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.carDetails {
+    margin-left: 50px;
+}
+
+.carName {
+    display: block;
+    margin-left: 30px;
+    width: 200px;
+}
+
+.carImage {
+    max-width: 250px;
+}
+
+.carImage img {
+    width: 100%;
+}
+
+.carPriceBox {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
